@@ -42,7 +42,7 @@ export function Game() {
         </div>
 
         {/* Canvas */}
-        <div className="w-[800px] bg-white rounded-lg shadow-lg p-4">
+        <div className="w-[800px] h-[600px] bg-white rounded-lg shadow-lg">
           <GameCanvas 
             gameState={gameState}
             onCanvasClick={handleCanvasClick}
