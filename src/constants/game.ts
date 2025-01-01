@@ -1,5 +1,5 @@
 export const GAME = {
-  TARGET_HIT_DISTANCE: 10,
+  TARGET_HIT_DISTANCE: 20,
   POINT_SCORE: 10,
   BOUNDARY_PADDING: 40, // Minimum distance from canvas edges
   GRID_LINE_PADDING: 20 // Minimum distance from grid lines
