@@ -1,5 +1,4 @@
 import React from 'react';
-import { Instructions } from './Instructions';
 import { GameControls } from './GameControls';
 import { GameCanvas } from './Canvas/GameCanvas';
 import { useGameState } from '../hooks/useGameState';
@@ -28,7 +27,7 @@ export function Game() {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col gap-4 p-4">
-        {/* Controls and Instructions */}
+        {/* Controls */}
         <div className="w-[800px] space-y-4">
           <GameControls 
             currentMode={gameState.mode}
@@ -40,7 +39,6 @@ export function Game() {
             onToggleGrid={toggleGrid}
             onToggleDirections={toggleDirections}
           />
-          <Instructions mode={gameState.mode} />
         </div>
 
         {/* Canvas */}

@@ -15,12 +15,16 @@ const instructions: Record<GameMode, string> = {
 
 export function Instructions({ mode }: InstructionsProps) {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-lg">
-      <h2 className="text-lg font-semibold text-gray-700 mb-2 flex items-center gap-2">
-        <i className="fas fa-lightbulb text-yellow-500"></i>
-        游戏说明
-      </h2>
-      <p className="text-gray-600">{instructions[mode]}</p>
+    <div className="bg-white p-6 rounded-xl shadow-2xl max-w-md w-full mx-4">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+          <i className="fas fa-lightbulb text-yellow-500"></i>
+          游戏说明
+        </h2>
+      </div>
+      <div className="prose prose-sm">
+        <p className="text-gray-600 leading-relaxed">{instructions[mode]}</p>
+      </div>
     </div>
   );
 }

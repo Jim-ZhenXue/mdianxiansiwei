@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GameMode } from '../types';
+import { Instructions } from './Instructions';
 
 // Add eraser icon component
 const EraserIcon = () => (
@@ -29,6 +30,8 @@ export function GameControls({
   onToggleGrid,
   onToggleDirections 
 }: GameControlsProps) {
+  const [showInstructions, setShowInstructions] = useState(false);
+
   return (
     <div className="bg-gradient-to-br from-indigo-600 to-purple-700 p-6 rounded-xl shadow-xl text-white">
       {/* Game Stats Panel */}
@@ -68,7 +71,7 @@ export function GameControls({
         </div>
       </div>
 
-      {/* Settings */}
+      {/* Toggle Buttons */}
       <div className="space-y-2">
         <button
           onClick={onToggleGrid}
@@ -99,7 +102,31 @@ export function GameControls({
           <span className="text-lg">{showDirections ? '🧭' : '🧭'}</span>
           <span className="font-medium">{showDirections ? '隐藏方位' : '显示方位'}</span>
         </button>
+
+        <button
+          onClick={() => setShowInstructions(!showInstructions)}
+          className={`
+            w-full p-3 rounded-lg transition-all duration-200
+            flex items-center justify-center gap-2
+            ${showInstructions
+              ? 'bg-yellow-400 text-purple-900'
+              : 'bg-white/10 hover:bg-white/20'
+            }
+          `}
+        >
+          <span className="text-lg">📖</span>
+          <span className="font-medium">游戏说明</span>
+        </button>
       </div>
+
+      {/* Instructions Modal */}
+      {showInstructions && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setShowInstructions(false)}>
+          <div className="relative" onClick={e => e.stopPropagation()}>
+            <Instructions mode={currentMode} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
