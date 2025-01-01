@@ -114,7 +114,7 @@ export function GameControls({
             }
           `}
         >
-          <span className="text-lg">📖</span>
+          <span className="text-lg">💡</span>
           <span className="font-medium">游戏说明</span>
         </button>
       </div>
