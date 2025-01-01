@@ -65,18 +65,18 @@ export function GameControls({
               `}
             >
               {icon && <span className="w-4 h-4">{icon}</span>}
-              <span className="font-medium text-sm">{label}</span>
+              <span className="font-medium text-xs">{label}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Toggle Buttons */}
-      <div className="space-y-2">
+      <div className="flex gap-2">
         <button
           onClick={onToggleGrid}
           className={`
-            w-full p-3 rounded-lg transition-all duration-200
+            flex-1 p-3 rounded-lg transition-all duration-200
             flex items-center justify-center gap-2
             ${showGrid
               ? 'bg-yellow-400 text-purple-900'
@@ -85,13 +85,13 @@ export function GameControls({
           `}
         >
           <span className="text-lg">{showGrid ? '⊞' : '⊡'}</span>
-          <span className="font-medium">{showGrid ? '隐藏网格' : '显示网格'}</span>
+          <span className="font-medium text-xs">{showGrid ? '隐藏网络' : '显示网络'}</span>
         </button>
 
         <button
           onClick={onToggleDirections}
           className={`
-            w-full p-3 rounded-lg transition-all duration-200
+            flex-1 p-3 rounded-lg transition-all duration-200
             flex items-center justify-center gap-2
             ${showDirections
               ? 'bg-yellow-400 text-purple-900'
@@ -99,23 +99,16 @@ export function GameControls({
             }
           `}
         >
-          <span className="text-lg">{showDirections ? '🧭' : '🧭'}</span>
-          <span className="font-medium">{showDirections ? '隐藏方位' : '显示方位'}</span>
+          <span className="text-lg">🧭</span>
+          <span className="font-medium text-xs">{showDirections ? '隐藏方位' : '显示方位'}</span>
         </button>
 
         <button
-          onClick={() => setShowInstructions(!showInstructions)}
-          className={`
-            w-full p-3 rounded-lg transition-all duration-200
-            flex items-center justify-center gap-2
-            ${showInstructions
-              ? 'bg-yellow-400 text-purple-900'
-              : 'bg-white/10 hover:bg-white/20'
-            }
-          `}
+          onClick={() => setShowInstructions(true)}
+          className="flex-1 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200 flex items-center justify-center gap-2"
         >
           <span className="text-lg">💡</span>
-          <span className="font-medium">游戏说明</span>
+          <span className="font-medium text-xs">游戏提示</span>
         </button>
       </div>
 
