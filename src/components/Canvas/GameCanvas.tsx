@@ -69,10 +69,8 @@ export function GameCanvas({ gameState, onCanvasClick }: GameCanvasProps) {
       <canvas
         ref={canvasRef}
         onClick={handleClick}
-        className="rounded-lg"
+        className="w-full h-full rounded-lg"
         style={{ 
-          width: `${CANVAS.WIDTH}px`, 
-          height: `${CANVAS.HEIGHT}px`,
           imageRendering: 'crisp-edges'
         }}
       />
