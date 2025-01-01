@@ -65,11 +65,11 @@ export function GameCanvas({ gameState, onCanvasClick }: GameCanvasProps) {
   }, [onCanvasClick]);
 
   return (
-    <div ref={containerRef} className="w-full h-full flex items-center justify-center bg-white p-4 rounded-lg">
+    <div ref={containerRef} className="w-full h-full flex items-center justify-center">
       <canvas
         ref={canvasRef}
         onClick={handleClick}
-        className="border-2 border-gray-300 rounded-lg"
+        className="rounded-lg"
         style={{ 
           width: `${CANVAS.WIDTH}px`, 
           height: `${CANVAS.HEIGHT}px`,

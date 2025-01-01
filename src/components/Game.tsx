@@ -17,7 +17,7 @@ export function Game() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100">
       {/* Header Section */}
-      <header className="w-[800px] bg-white shadow-sm p-4 rounded-lg mt-4">
+      <header className="w-[400px] bg-white shadow-sm p-4 rounded-lg mt-4">
         <h1 className="text-2xl font-bold text-center text-gray-800">
           <span className="title-gradient">点</span>
           <span>与</span>
@@ -28,7 +28,7 @@ export function Game() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col gap-4 p-4">
         {/* Controls */}
-        <div className="w-[800px] space-y-4">
+        <div className="w-[400px] space-y-4">
           <GameControls 
             currentMode={gameState.mode}
             onModeChange={switchMode}
@@ -42,7 +42,7 @@ export function Game() {
         </div>
 
         {/* Canvas */}
-        <div className="w-[800px] h-[600px] bg-white rounded-lg shadow-lg">
+        <div className="w-[400px] h-[300px] bg-white rounded-lg overflow-hidden">
           <GameCanvas 
             gameState={gameState}
             onCanvasClick={handleCanvasClick}
